@@ -27,7 +27,7 @@ public class BoundaryEmmenager {
 					break;
 
 				case 2:
-					//TODO a completer
+					emmenagerGaulois(nomVisiteur);
 					break;
 
 				default:
@@ -40,6 +40,26 @@ public class BoundaryEmmenager {
 	}
 
 	private void emmenagerDruide(String nomVisiteur) {
-		//TODO a completer
+		System.out.println("Bienvenu " + nomVisiteur + "\n" + 
+	"Quelle est votre force ?");
+		int choixForce = 0;
+		StringBuilder question = new StringBuilder();
+		choixForce = Clavier.entrerEntier(question.toString());
+		System.out.println("Quelle est la force de potion la plus faible que vous produisez");
+		int potionPlusFaible = 0;
+		potionPlusFaible = Clavier.entrerEntier(question.toString());
+		System.out.println("Quelle est la force de potion la plus forte que vous produisez");
+		int potionPlusForte = 0;
+		potionPlusForte = Clavier.entrerEntier(question.toString());
+		controlEmmenager.ajouterDruide(nomVisiteur, choixForce, potionPlusFaible, potionPlusForte);
+		
+	}
+	private void emmenagerGaulois(String nomVisiteur) {
+		System.out.println("Bienvenu " + nomVisiteur + "\n" + 
+				"Quelle est votre force ?");
+		int choixForce = 0;
+		StringBuilder question = new StringBuilder();
+		choixForce = Clavier.entrerEntier(question.toString());
+		controlEmmenager.ajouterGaulois(nomVisiteur,choixForce);
 	}
 }
